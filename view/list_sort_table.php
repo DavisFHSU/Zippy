@@ -19,6 +19,5 @@
         <?php endforeach; ?>
     </tbody>
 
- <br>
-    <h3><a href="./index.php?action=list_items">Return to Main Page</a></h3>
+ 
 
