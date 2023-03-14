@@ -63,7 +63,7 @@ function get_vehicles_by_make($make_id,$sort) {
                 FROM vehicles, make
                 WHERE vehicles.make_id = make.ID
                 AND vehicles.make_id = :make_id
-                ORDER BY vehicles.inventory_num';
+                ORDER BY vehicles.price';
     }
     $statement = $db->prepare($query);
     $statement->bindValue(':make_id', $make_id);
@@ -101,7 +101,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                         FROM vehicles, class
                         WHERE vehicles.class_id = class.ID
                         AND vehicles.class_id = :class_id
-                        ORDER BY vehicles.inventory_num';
+                        ORDER BY vehicles.price';
     }
 
     $statement = $db->prepare($query);
