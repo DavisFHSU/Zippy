@@ -122,7 +122,7 @@ function get_all_vehicles($sort_by) {
         WHERE vehicles.class_ID = class.ID and
         vehicles.make_id = make.ID and
         vehicles.type_id = type.ID
-        ORDER BY vehicles.price';
+        ORDER BY vehicles.price DESC';
     }
 
     else if ($sort_by == 'year') {
@@ -132,7 +132,7 @@ function get_all_vehicles($sort_by) {
         WHERE vehicles.class_ID = class.ID and
         vehicles.make_id = make.ID and
         vehicles.type_id = type.ID
-        ORDER BY vehicles.year';
+        ORDER BY vehicles.year DESC';
     }
 
     else {
