@@ -10,9 +10,7 @@
 <?php
     if ($category_name != "All Vehicles") {
         include './view/list_sort_table.php';
-        <br>
-        <h3><a href="./index.php?action=list_items">Return to Main Page</a></h3>
-    } 
+      } 
 
     else {
         include './view/list_all_table.php'; 
@@ -20,5 +18,8 @@
  ?>
 </table>      
 </div>
+
+ <br>
+ <h3><a href="./index.php?action=list_items">Return to Main Page</a></h3>
 
 <?php include './view/footer.php'; ?>
