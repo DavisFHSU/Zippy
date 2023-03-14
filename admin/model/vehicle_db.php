@@ -8,7 +8,7 @@ function get_vehicles_by_type($type_id,$sort_by) {
         FROM vehicles, type
         WHERE vehicles.type_id = type.ID
         AND vehicles.type_id = :type_id
-        ORDER BY vehicles.price'; 
+        ORDER BY vehicles.price DESC'; 
     }
         
     else if ($sort_by == 'year') {
@@ -17,7 +17,7 @@ function get_vehicles_by_type($type_id,$sort_by) {
         FROM vehicles, type
         WHERE vehicles.type_id = type.ID
         AND vehicles.type_id = :type_id
-        ORDER BY vehicles.year'; 
+        ORDER BY vehicles.year DESC'; 
     }
     
     else {
