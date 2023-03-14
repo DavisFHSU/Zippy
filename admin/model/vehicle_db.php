@@ -26,7 +26,7 @@ function get_vehicles_by_type($type_id,$sort_by) {
                 FROM vehicles, type
                 WHERE vehicles.type_id = type.ID
                 AND vehicles.type_id = :type_id
-                ORDER BY vehicles.inventory_num'; 
+                ORDER BY vehicles.price DESC'; 
     }
     $statement = $db->prepare($query);
     $statement->bindValue(":type_id", $type_id);
@@ -45,7 +45,7 @@ function get_vehicles_by_make($make_id,$sort) {
                     FROM vehicles, make
                     WHERE vehicles.make_id = make.ID
                     AND vehicles.make_id = :make_id
-                    ORDER BY vehicles.price';
+                    ORDER BY vehicles.price DESC';
         }
 
     else if ($sort == 'year') {
@@ -54,7 +54,7 @@ function get_vehicles_by_make($make_id,$sort) {
                         FROM vehicles, make
                         WHERE vehicles.make_id = make.ID
                         AND vehicles.make_id = :make_id
-                        ORDER BY vehicles.year';
+                        ORDER BY vehicles.year DESC';
             }
 
     else {
@@ -63,7 +63,7 @@ function get_vehicles_by_make($make_id,$sort) {
                 FROM vehicles, make
                 WHERE vehicles.make_id = make.ID
                 AND vehicles.make_id = :make_id
-                ORDER BY vehicles.inventory_num';
+                ORDER BY vehicles.price DESC';
     }
     $statement = $db->prepare($query);
     $statement->bindValue(':make_id', $make_id);
@@ -83,7 +83,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                 FROM vehicles, class
                 WHERE vehicles.class_id = class.ID
                 AND vehicles.class_id = :class_id
-                ORDER BY vehicles.price';
+                ORDER BY vehicles.price DESC';
     }
 
     else if ($sort_by == 'year') {
@@ -92,7 +92,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                     FROM vehicles, class
                     WHERE vehicles.class_id = class.ID
                     AND vehicles.class_id = :class_id
-                    ORDER BY vehicles.year';
+                    ORDER BY vehicles.year DESC';
     }
 
     else {
@@ -101,7 +101,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                         FROM vehicles, class
                         WHERE vehicles.class_id = class.ID
                         AND vehicles.class_id = :class_id
-                        ORDER BY vehicles.inventory_num';
+                        ORDER BY vehicles.price DESC';
     }
 
     $statement = $db->prepare($query);
@@ -142,7 +142,7 @@ function get_all_vehicles($sort_by) {
         WHERE vehicles.class_ID = class.ID and
         vehicles.make_id = make.ID and
         vehicles.type_id = type.ID
-        ORDER BY vehicles.inventory_num';
+        ORDER BY vehicles.price DESC';
     }
 
 
