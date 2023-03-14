@@ -83,7 +83,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                 FROM vehicles, class
                 WHERE vehicles.class_id = class.ID
                 AND vehicles.class_id = :class_id
-                ORDER BY vehicles.price';
+                ORDER BY vehicles.price DESC';
     }
 
     else if ($sort_by == 'year') {
@@ -92,7 +92,7 @@ function get_vehicles_by_class($class_id,$sort_by) {
                     FROM vehicles, class
                     WHERE vehicles.class_id = class.ID
                     AND vehicles.class_id = :class_id
-                    ORDER BY vehicles.year';
+                    ORDER BY vehicles.year DESC';
     }
 
     else {
