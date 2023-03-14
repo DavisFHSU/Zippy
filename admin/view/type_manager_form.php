@@ -20,7 +20,7 @@
     <thead>
         <tr>
                 <th>Types</th>
-                <th>Number</th>
+                <th>Inventory</th>
                 <th>&nbsp;</th>
         </tr>
     </thread>
