@@ -34,7 +34,7 @@ if ($action == 'list_items') {
             $type_id = 0; }
 
     if ($sort_by == NULL) {
-            $sort_by = 'inventory_num'; }
+            $sort_by = 'price'; }
 
     $makes = get_makes();
     $classes = get_classes();
