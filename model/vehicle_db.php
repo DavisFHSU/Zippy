@@ -26,7 +26,7 @@ function get_vehicles_by_type($type_id,$sort_by) {
                 FROM vehicles, type
                 WHERE vehicles.type_id = type.ID
                 AND vehicles.type_id = :type_id
-                ORDER BY vehicles.inventory_num'; 
+                ORDER BY vehicles.price DESC'; 
     }
     $statement = $db->prepare($query);
     $statement->bindValue(":type_id", $type_id);
